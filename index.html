@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thamizharasan - React Developer Portfolio">
+    <meta name="keywords" content="React, Frontend, Developer, JavaScript, Portfolio">
+    <title>My Profile | Thamizharasan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #61dafb; /* React blue */
+            --secondary-color: #282c34; /* React dark */
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .profile-intro h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .profile-intro h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .profile-intro p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .skill-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+        
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card h3 {
+            font-size: 1.3rem;
+            padding: 20px 20px 10px;
+            color: var(--secondary-color);
+        }
+        
+        .project-card .project-time {
+            font-size: 0.9rem;
+            padding: 0 20px 10px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .project-card p {
+            padding: 0 20px 20px;
+        }
+        
+        .project-card a {
+            display: inline-block;
+            margin: 0 20px 20px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .project-card a:hover {
+            background-color: #4dc0e6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container profile-intro">
+            <h1>Thamizharasan</h1>
+            <h2>React Developer</h2>
+            <p>Passionate about building modern, responsive, and user-friendly web applications with React and related technologies.</p>
+        </div>
+    </header>
+    
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>I'm a dedicated React Developer with a strong foundation in frontend technologies. I specialize in building efficient, scalable, and maintainable web applications using React ecosystem. With a keen eye for detail and a passion for clean code, I strive to create exceptional user experiences that meet both client needs and industry standards.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li>React.js & React Hooks</li>
+                            <li>Redux & Context API</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>TypeScript</li>
+                            <li>HTML5 & CSS3</li>
+                            <li>Styled Components & Tailwind CSS</li>
+                            <li>REST APIs & GraphQL</li>
+                            <li>Jest & React Testing Library</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <ul class="skill-list">
+                            <li>Problem Solving</li>
+                            <li>Team Collaboration</li>
+                            <li>Communication</li>
+                            <li>Time Management</li>
+                            <li>Adaptability</li>
+                            <li>Attention to Detail</li>
+                            <li>User-Centric Thinking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <div class="container">
+                <h2>Project Details</h2>
+                <div class="projects-container">
+                    <article class="project-card">
+                        <h3>E-Commerce Dashboard</h3>
+                        <p class="project-time">3 months | 2023</p>
+                        <p>Developed a comprehensive React-based admin dashboard for an e-commerce platform, featuring real-time analytics, inventory management, and order processing. Implemented Redux for state management and Material UI for consistent design.</p>
+                        <a href="#">View Project</a>
+                    </article>
+                    <article class="project-card">
+                        <h3>Social Media Application</h3>
+                        <p class="project-time">4 months | 2022</p>
+                        <p>Built a responsive social media application with React and Firebase. Implemented features like real-time chat, post creation, user authentication, and notifications using React hooks and context API for state management.</p>
+                        <a href="#">View Project</a>
+                    </article>
+                    <article class="project-card">
+                        <h3>Weather Forecast App</h3>
+                        <p class="project-time">1 month | 2022</p>
+                        <p>Created a weather application using React that provides current and forecasted weather conditions. Integrated with OpenWeatherMap API, implemented geolocation features, and used Styled Components for a modern UI with dark/light themes.</p>
+                        <a href="#">View Project</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Thamizharasan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
